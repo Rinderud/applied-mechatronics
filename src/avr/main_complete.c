@@ -297,15 +297,7 @@ int16_t sat(int16_t X)
 
 int16_t count_to_speed(int16_t average_count)
 {
-	int16_t rpm = from_fixed_point(mul(to_fixed_point(average_count), 19)); // 77?6
-
-	/*
-	uint16_t temp = average_count;
-	uint16_t rpm = average_count;
-	rpm += temp >> 2;
-	rpm -= temp >> 5;
-	rpm -= temp >> 6;
-	*/
+	int16_t rpm = from_fixed_point(mul(to_fixed_point(average_count), 19));
 	return rpm + bias;
 }
 
